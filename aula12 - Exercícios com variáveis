@@ -1,0 +1,13 @@
+/* ATRIBUA OS VALORES DAS VARIÁVEIS
+varA, varB e varC para B, C E A  */
+
+
+let varA = 'A';
+let varB = 'B';
+let varC = 'C'; 
+
+varA = varB &= varB = varC;
+varC = varB;
+
+console.log(`${varA}, ${varB}, ${varC}`)
+
