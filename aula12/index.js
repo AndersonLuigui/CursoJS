@@ -8,5 +8,5 @@ let varC = 'C';
 
 [varA, varB, varC] = [varB, varC, varA];
 
-console.log(`${varA}, ${varB}, ${varC}`);
+console.log(`${varA}, ${varB}, ${varC}`); 
 
