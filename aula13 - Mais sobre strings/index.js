@@ -35,5 +35,13 @@ console.log(outradaString.length);
 
 
 // PARA MOSTRAR A STRING MAIÚSCULA E MINÚSCULA UTILIZA-SE O toUpperCase e o toLowerCase
-console.log(outradaString.toUpperCase);
-console.log(outraString.toLowerCase);
+console.log(outradaString.toUpperCase());
+console.log(outradaString.toLowerCase());
+
+
+// PARA SABER OS ULTIMOS ELEMENTOS DA STRING UTILIZA-SE O slice
+console.log(outradaString.slice('-3'));
+
+
+// PARA MOSTRAR AS PALAVRAS DE UMA STRING UTILIZA-SE O split(' ') LEMBRANDO QUE O SPLIT RETIRA OS ESPAÇOS COM AS ASPAS
+console.log(outradaString.split(' '));
