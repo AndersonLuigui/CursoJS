@@ -11,7 +11,11 @@ FEITA ATRAVÉS DO .toString() - NESSA OPERAÇÃO A CONVERSÃO É TEMPORÁRIA OU 
 // num1 = num1.toString;
 
 // AINDA COM O toString É POSSÍVEL SABER O CÓDIGO BINÁRIO DO NÚMERO 
-console.log(num1.toString(2));
+console.log(num1.toString(2)); //toString
+
+// PARA ARREDONDAR ALGUM NÚMERO É USADO O .toFixed(2); sendo o 2 o número de casas decimais
+let num3 = 10.545884644;
+console.log(num3.toFixed(2)); //toFixed
 
 
 
