@@ -1,9 +1,10 @@
-const numero = Number(prompt("Digite um nm número"));
+const numero = Number(prompt("Digite um numero número"));
 const numeroTitulo = document.getElementById('numero-titulo');
 const texto = document.getElementById('texto');
 
 
 numeroTitulo.innerHTML = numero;
+
 texto.innerHTML + '';
 texto.innerHTML =+ `<p>O seu número é ${numero}</p>`;
 texto.innerHTML =+ `<p>A raiz quadrada do número ${numero} é ${Math.sqrt(numero)}</p>`;
