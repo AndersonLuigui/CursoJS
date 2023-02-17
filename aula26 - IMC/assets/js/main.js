@@ -2,6 +2,8 @@
 // 1 - CAPTURANDO EVENTO DE SUBMIT DO FORMULÁRIO
 const form = document.querySelector('#formulario');
 
+
+// 2- ADICIONANDO UMA ESCUTA NO EVENTO addEventListener()
 form.addEventListener('submit', function (e) {
     e.preventDefault();
     const inputPeso = e.target.querySelector('#peso');
