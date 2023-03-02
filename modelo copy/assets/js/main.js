@@ -1,4 +1,4 @@
-// dia da semana + numero do dia + nome do mês + ano
+/* // dia da semana + numero do dia + nome do mês + ano
 
 const h1 = document.querySelector('.container h1');
 const data = new Date;
@@ -87,10 +87,24 @@ function criaData(data) {
     const nomeDia = getDiaSemanaTexto(diaSemana);
     const nomeMes = getNomeMes(numeroMes);
 
-    return `${nomeDia}, ${data.getDate()}, de ${nomeMes}`
+    return (
+        `${nomeDia}, ${data.getDate()} de ${nomeMes} `+
+        `de ${data.getFullYear()} ${data.getHours()}:${data.getMinutes()}`
+
+    );
+
 }
 
-h1.innerHTML = criaData(data);
+h1.innerHTML = criaData(data); */
 
 
 
+// AGORA TODO ESTE CÓDIGO EM CIMA PODE SER RESUMIDO EM POUCAS LINHAS COMO ABAIXO >>
+
+/* const h1 = document.querySelector('.container h1');
+const data = new Date;
+/* const opcoes = {
+    dateStyle: 'full'
+}; 
+
+h1.innerHTML = data.toLocaleDateString('pt-BR', { dateStyle: 'full'}); */
