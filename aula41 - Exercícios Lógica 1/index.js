@@ -25,7 +25,7 @@ console.log(bla(12, 45)); */
 //___________________MELHORIAS___DO___CÓDIGO___ACIMA__________________________________
 
 function bla (x,y) {
-    return x > y ? x : y;
+    return x > y ? x : y; 
 }
 console.log(`O maior número entre estes dois é ${bla(25,2)}`);
 
