@@ -1,3 +1,4 @@
+//___________________ESTRUTURA DE REPETIÇÃO_______________________WHILE E DO WHILE______________
 function random(min, max) {
     const r = Math.random() * (max - min) + min;
     return Math.floor(r);
