@@ -1,21 +1,52 @@
-const relogio = document.querySelector('.relogio'); // SELECIONANDO BOTÕES RELÓGIO
-const iniciar = document.querySelector('.iniciar'); // SELECIONANDO BOTÕES RELÓGIO
-const pausar = document.querySelector('.pausar'); // SELECIONANDO BOTÕES RELÓGIO
-const zerar = document.querySelector('.zerar'); // SELECIONANDO BOTÕES RELÓGIO
-
-iniciar.addEventListener('click', function(event) { // ESTA LINHA DE CÓDIGO PEGA O EVENTO 'CLICK' E ADICIONA A FUNCÃO
-    relogio.innerHTML = "Anderson Vc clicou no INICIAR";
-})
-
-
-pausar.addEventListener('click', function(event) { // ESTA LINHA DE CÓDIGO PEGA O EVENTO 'CLICK' E ADICIONA A FUNCÃO
-    alert("Você clicou no botão pausar");
-})
+function criaHoraDosSegundos(segundos) {
+    const data = new Date(segundos * 1000);
+    return data.toLocaleTimeString('pt-BR', {
+        hour12: false, 
+        timeZone: 'UTC'
+    });
+}
 
 
-zerar.addEventListener('click', function(event) { // ESTA LINHA DE CÓDIGO PEGA O EVENTO 'CLICK' E ADICIONA A FUNCÃO
-    alert("Você clicou no botão zerar");
-})
+// SELECIONANDO BOTÕES RELÓGIO____________________________________________________
+const relogio = document.querySelector('.relogio');
+const iniciar = document.querySelector('.iniciar');
+const pausar = document.querySelector('.pausar'); 
+const zerar = document.querySelector('.zerar'); 
+
+
+// DEFININDO VARIÁVEIS PARA INÍCIO E TÉRMINO______________________________________
+let segundos = 0;
+let timer = 0;
+
+
+// FUNÇÃO PRA INICIAR O RELÓGIO___________________________________________________
+function iniciaRelogio() {
+    const timer = setInterval(function() {
+        segundos++;
+        relogio.innerHTML = criaHoraDosSegundos(segundos); // DEIXANDO O CONTADOR NO FORMATO 00:00:01
+    }, 1000);
+}
+
+
+
+// ESTA LINHA DE CÓDIGO PEGA O EVENTO 'CLICK' E ADICIONA A FUNCÃO___________________
+iniciar.addEventListener('click', function(event) { 
+    iniciaRelogio();
+});
+
+// ESTA LINHA DE CÓDIGO PEGA O EVENTO 'CLICK' E ADICIONA A FUNCÃO___________________
+pausar.addEventListener('click', function(event) {
+    clearInterval(timer);
+});
+
+// ESTA LINHA DE CÓDIGO PEGA O EVENTO 'CLICK' E ADICIONA A FUNCÃO___________________
+zerar.addEventListener('click', function(event) {
+    clearInterval(timer);
+    relogio.innerHTML = '00:00:00';
+    
+});
+
+
 
 
 // _________________ATENÇÃO_____________PARA RESSALTAR__________innerHTML___________
