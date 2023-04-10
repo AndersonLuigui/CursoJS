@@ -1,50 +1,46 @@
-function criaHoraDosSegundos(segundos) {
-    const data = new Date(segundos * 1000);
-    return data.toLocaleTimeString('pt-BR', {
-        hour12: false, 
+function relogio() {
+    function criaHoraDosSegundos(segundos) {
+      const data = new Date(segundos * 1000);
+      return data.toLocaleTimeString('pt-BR', {
+        hour12: false,
         timeZone: 'UTC'
-    });
-}
-
-
-// SELECIONANDO BOTÕES RELÓGIO____________________________________________________
-const relogio = document.querySelector('.relogio');
-const iniciar = document.querySelector('.iniciar');
-const pausar = document.querySelector('.pausar'); 
-const zerar = document.querySelector('.zerar'); 
-
-
-// DEFININDO VARIÁVEIS PARA INÍCIO E TÉRMINO______________________________________
-let segundos = 0;
-let timer = 0;
-
-
-// FUNÇÃO PRA INICIAR O RELÓGIO___________________________________________________
-function iniciaRelogio() {
-    const timer = setInterval(function() {
+      });
+    }
+  
+    const relogio = document.querySelector('.relogio');
+    let segundos = 0;
+    let timer;
+  
+    function iniciaRelogio() {
+      timer = setInterval(function() {
         segundos++;
-        relogio.innerHTML = criaHoraDosSegundos(segundos); // DEIXANDO O CONTADOR NO FORMATO 00:00:01
-    }, 1000);
-}
-
-
-
-// ESTA LINHA DE CÓDIGO PEGA O EVENTO 'CLICK' E ADICIONA A FUNCÃO___________________
-iniciar.addEventListener('click', function(event) { 
-    iniciaRelogio();
-});
-
-// ESTA LINHA DE CÓDIGO PEGA O EVENTO 'CLICK' E ADICIONA A FUNCÃO___________________
-pausar.addEventListener('click', function(event) {
-    clearInterval(timer);
-});
-
-// ESTA LINHA DE CÓDIGO PEGA O EVENTO 'CLICK' E ADICIONA A FUNCÃO___________________
-zerar.addEventListener('click', function(event) {
-    clearInterval(timer);
-    relogio.innerHTML = '00:00:00';
-    
-});
+        relogio.innerHTML = criaHoraDosSegundos(segundos);
+      }, 1000);
+    }
+  
+    document.addEventListener('click', function(e) {
+      const el = e.target;
+  
+      if (el.classList.contains('zerar')) {
+        clearInterval(timer);
+        relogio.innerHTML = '00:00:00';
+        relogio.classList.remove('pausado');
+        segundos = 0;
+      }
+  
+      if (el.classList.contains('iniciar')) {
+        relogio.classList.remove('pausado');
+        clearInterval(timer);
+        iniciaRelogio();
+      }
+  
+      if (el.classList.contains('pausar')) {
+        clearInterval(timer);
+        relogio.classList.add('pausado');
+      }
+    });
+  }
+  relogio();
 
 
 
