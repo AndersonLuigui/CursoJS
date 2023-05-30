@@ -12,3 +12,4 @@ console.dir(funcao);
 // TENDI FOI NADA TAMBÉM
 
 
+ 
