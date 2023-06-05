@@ -9,8 +9,8 @@ function criaCalculadora(){
         },
 
       pressionaEnter() {
-            this.display.addEventListener('keyup', e => {
-                if (e.keyCode === 13) {
+            this.display.addEventListener('keyup', e => {    // keyCode===13 BOTÃO ENTER
+                if (e.keyCode === 13) {                     
                     this.realizaConta();
                 }
             });
@@ -21,7 +21,7 @@ function criaCalculadora(){
         },
 
         apagaUm() {
-            this.display.value = this.display.value.slice(0,-1);
+            this.display.value = this.display.value.slice(0,-1);   // slice(0,-1) 
         },
 
         realizaConta() {
@@ -42,7 +42,6 @@ function criaCalculadora(){
 
            }
         },
-
 
 
         cliqueBotoes() {
@@ -73,11 +72,7 @@ function criaCalculadora(){
         },
 
         btnParaDisplay(valor){
-            this.display.value += valor;
-
-
-
-            
+            this.display.value += valor;  // CONCATERNANDO VALORES NO DISPLAY 
         }
 
 
