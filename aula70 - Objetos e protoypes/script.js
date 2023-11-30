@@ -34,9 +34,60 @@ const pessoa2 = {
 };
 console.log(pessoa2) */
 
-const pessoa1 = new Object();
+/* const pessoa1 = new Object();
 pessoa1.nome = 'Anderson';
 pessoa1.sobrenome = 'Luigui';
+pessoa1.idade= 26;
+pessoa1.falarNome = function() {
+    return (`${this.nome} está falando o seu nome.`);
+};
 
-delete pessoa1.nome;
-console.log(pessoa1)
+
+pessoa1.getDataNascimento = function() {
+    const dataAtual = new Date();
+    return dataAtual.getFullYear() - this.idade;
+}
+
+console.log(pessoa1.getDataNascimento());
+
+for (let chave in pessoa1) {
+    console.log(pessoa1[chave]);
+}
+
+ */
+
+
+
+
+
+
+// FACTORY FUNCTIONS 
+function criaPessoa(nome, sobrenome) {
+    return {
+        nome,
+        sobrenome,
+        get nomeCompleto() {
+            return `${this.nome} ${this.sobrenome}`
+        }
+    };
+}
+
+const p1 = criaPessoa('Anderson', 'Luigui');
+console.log(p1.nomeCompleto);
+
+
+
+
+// CONSTRUCTOR FUNCTIONS
+function Pessoa(nome,sobrenome){
+    this.nome = nome;
+    this.sobrenome = sobrenome;
+}
+
+const p2 = new Pessoa('Anderson','Luigui');
+const p3 = new Pessoa('Maria','Fernanda');
+console.log(p2);
+console.log(p3);
+
+
+
